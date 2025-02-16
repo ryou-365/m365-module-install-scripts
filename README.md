@@ -15,26 +15,14 @@ This repository provides a set of PowerShell scripts designed to simplify the ma
 
 The following modules are supported by the scripts:
 
-- Microsoft Graph
- - Provides management capabilities for Azure AD, Intune, Teams, and more.
-
-- Microsoft Entra & EntraExporter
- - Offers overall management and data export capabilities for Microsoft Entra, affecting the entire Microsoft 365 environment.
-
-- Exchange Online Management
- - Handles administration tasks for Exchange Online.
-
-- SharePoint Online & OneDrive Management
- - Utilizes the Microsoft.Online.SharePoint.PowerShell module for managing SharePoint Online and OneDrive.
-
-- Microsoft Teams Management
- - Provides tools for managing Microsoft Teams.
-
-- Windows Autopilot/Intune (Device Management)
- - Supports device provisioning and management via WindowsAutoPilotIntune.
-
-- Power Platform Modules
- - Includes both Microsoft.PowerApps.Administration.PowerShell and Microsoft.PowerApps.PowerShell for managing PowerApps within the Power Platform.
+- Microsoft Graph: Provides management capabilities for Azure AD, Intune, Teams, and more.
+- Microsoft Entra: Offers overall management for Microsoft Entra, impacting the entire Microsoft 365 environment.
+- EntraExporter: Enables data export for Microsoft Entra.
+- Exchange Online Management: Handles administration tasks for Exchange Online.
+- SharePoint Online & OneDrive Management: Utilizes the Microsoft.Online.SharePoint.PowerShell module for managing SharePoint Online and OneDrive.
+- Microsoft Teams Management: Provides tools for managing Microsoft Teams.
+- Windows Autopilot/Intune (Device Management): Supports device provisioning and management via WindowsAutoPilotIntune.
+- Power Platform Modules: Includes both Microsoft.PowerApps.Administration.PowerShell and Microsoft.PowerApps.PowerShell for managing PowerApps within the Power Platform.
 
 ## Usage
 
