@@ -68,7 +68,12 @@ function Install-ModuleWithUpdateCheck {
         # If the module is not installed, install it
         Write-Host "Installing [$moduleName]..." -ForegroundColor Yellow
         Try {
-            Install-Module -Name $moduleName -Scope CurrentUser -Force -ErrorAction Stop
+            if ($moduleName -eq "Microsoft.Entra") {
+                Install-Module -Name $moduleName -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
+            }
+            else {
+                Install-Module -Name $moduleName -Scope CurrentUser -Force -ErrorAction Stop
+            }
             Write-Host "Installation of [$moduleName] completed successfully." -ForegroundColor Green
         }
         Catch {
@@ -80,13 +85,13 @@ function Install-ModuleWithUpdateCheck {
 
 # ----- Define the Module List -----
 $modules = @(
-    @{ Name = "Microsoft.Graph";                              Description = "Microsoft Graph API (Azure AD, Intune, Teams)" },
+    @{ Name = "Microsoft.Graph";                              Description = "Microsoft Graph API (Azure AD, Intune, Teams, etc.)" },
     @{ Name = "Microsoft.Entra";                              Description = "Microsoft Entra Management" },
     @{ Name = "EntraExporter";                                Description = "Microsoft Entra Exporter" },
     @{ Name = "ExchangeOnlineManagement";                     Description = "Exchange Online Management" },
     @{ Name = "Microsoft.Online.SharePoint.PowerShell";       Description = "SharePoint Online & OneDrive Management" },
     @{ Name = "MicrosoftTeams";                               Description = "Microsoft Teams Management" },
-    @{ Name = "WindowsAutoPilotIntune";                       Description = "Windows Autopilot (Device Management)" },
+    @{ Name = "WindowsAutoPilotIntune";                       Description = "Windows Autopilot/Intune (Device Management)" },
     @{ Name = "Microsoft.PowerApps.Administration.PowerShell"; Description = "PowerApps Administration" },
     @{ Name = "Microsoft.PowerApps.PowerShell";              Description = "PowerApps Module" }
 )
