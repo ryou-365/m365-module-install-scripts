@@ -33,31 +33,50 @@ To run an individual installation script, open PowerShell (ensure you're using P
 .\scripts\m365-module-install-menu.ps1
 ```
 
-```
-PS >.\scripts\m365-module-install-menu.ps1
+### Image
+
+```powershell
+PS C:\Users\ryou-365>.\scripts\m365-module-install-menu.ps1
 ================ Microsoft 365 Management Modules Installation Menu ================
-[1] Microsoft.Graph - Microsoft Graph API (Azure AD, Intune, Teams)
-[2] ExchangeOnlineManagement - Exchange Online Management
-[3] SharePointPnPPowerShellOnline - SharePoint Online & OneDrive Management
-[4] MicrosoftTeams - Microsoft Teams Management
-[5] Defender - Defender for Office 365 Management
-[6] WindowsAutopilotIntune - Windows Autopilot (Device Management)
-[7] PowerApps - Power Platform Management
-[8] PowerAutomate - Power Automate Flow Management
-[9] Dataverse - Dataverse (CDS) Management
-[10] Yammer - Yammer (Enterprise Social Network) Management
+[1] Microsoft.Graph - Microsoft Graph API (Azure AD, Intune, Teams, etc.)
+[2] Microsoft.Entra - Microsoft Entra Management
+[3] EntraExporter - Microsoft Entra Exporter
+[4] ExchangeOnlineManagement - Exchange Online Management
+[5] Microsoft.Online.SharePoint.PowerShell - SharePoint Online & OneDrive Management
+[6] MicrosoftTeams - Microsoft Teams Management
+[7] WindowsAutoPilotIntune - Windows Autopilot/Intune (Device Management)
+[8] Microsoft.PowerApps.Administration.PowerShell - PowerApps Administration
+[9] Microsoft.PowerApps.PowerShell - PowerApps Module
 [A] Execute All Modules
 =======================================================================================
-Select the module number(s) to install (or type 'A' for all). For multiple selections, separate by commas.: 1
+Select the module number(s) to install (or type 'A' for all). For multiple selections, separate by commas.: 1,2,3,7
 ----------------------------------------------
 Checking installation for [Microsoft.Graph]...
 [Microsoft.Graph] is already installed - Version: 2.25.0
 [Microsoft.Graph] is up-to-date.
 ----------------------------------------------
 
+----------------------------------------------
+Checking installation for [Microsoft.Entra]...
+Installing [Microsoft.Entra]...
+Installation of [Microsoft.Entra] completed successfully.
+----------------------------------------------
+
+----------------------------------------------
+Checking installation for [EntraExporter]...
+[EntraExporter] is already installed - Version: 2.0.7
+[EntraExporter] is up-to-date.
+----------------------------------------------
+
+----------------------------------------------
+Checking installation for [WindowsAutoPilotIntune]...
+[WindowsAutoPilotIntune] is already installed - Version: 5.7
+[WindowsAutoPilotIntune] is up-to-date.
+----------------------------------------------
+
 
 Module installation process completed.
-PS >
+PS C:\Users\ryou-365>
 ```
 
 ### Interactive Menu
