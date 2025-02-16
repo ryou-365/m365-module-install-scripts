@@ -33,7 +33,8 @@ To run an individual installation script, open PowerShell (ensure you're using P
 .\scripts\m365-module-install-menu.ps1
 ```
 
-### Image
+### Interactive Menu
+Alternatively, an interactive menu is provided. When executed, the script will display a list of available modules. You can select one or more modules by entering the corresponding numbers (or "A" for all). This mode automates the installation, update, and version-check process.
 
 ```powershell
 PS C:\Users\ryou-365>.\scripts\m365-module-install-menu.ps1
@@ -77,20 +78,6 @@ Checking installation for [WindowsAutoPilotIntune]...
 
 Module installation process completed.
 PS C:\Users\ryou-365>
-```
-
-### Interactive Menu
-Alternatively, an interactive menu is provided. When executed, the script will display a list of available modules. You can select one or more modules by entering the corresponding numbers (or "A" for all). This mode automates the installation, update, and version-check process.
-
-### Batch Execution
-To execute all installation scripts at once, run the following command from the repository root:
-
-```powershell
-$scriptPath = ".\Scripts"
-Get-ChildItem -Path $scriptPath -Filter "Install-*.ps1" | ForEach-Object { 
-    Write-Host "Executing: $($_.Name)" -ForegroundColor Cyan
-    & "$scriptPath\$($_.Name)"
-}
 ```
 
 ## Contribution
