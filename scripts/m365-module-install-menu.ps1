@@ -65,7 +65,7 @@ function Install-ModuleWithUpdateCheck {
         }
     }
     else {
-        # If module is not installed, perform installation
+        # If the module is not installed, install it
         Write-Host "Installing [$moduleName]..." -ForegroundColor Yellow
         Try {
             Install-Module -Name $moduleName -Scope CurrentUser -Force -ErrorAction Stop
@@ -80,16 +80,15 @@ function Install-ModuleWithUpdateCheck {
 
 # ----- Define the Module List -----
 $modules = @(
-    @{ Name = "Microsoft.Graph";                Description = "Microsoft Graph API (Azure AD, Intune, Teams)" },
-    @{ Name = "ExchangeOnlineManagement";       Description = "Exchange Online Management" },
-    @{ Name = "SharePointPnPPowerShellOnline";   Description = "SharePoint Online & OneDrive Management" },
-    @{ Name = "MicrosoftTeams";                 Description = "Microsoft Teams Management" },
-    @{ Name = "Defender";                       Description = "Defender for Office 365 Management" },
-    @{ Name = "WindowsAutopilotIntune";         Description = "Windows Autopilot (Device Management)" },
-    @{ Name = "PowerApps";                      Description = "Power Platform Management" },
-    @{ Name = "PowerAutomate";                  Description = "Power Automate Flow Management" },
-    @{ Name = "Dataverse";                      Description = "Dataverse (CDS) Management" },
-    @{ Name = "Yammer";                         Description = "Yammer (Enterprise Social Network) Management" }
+    @{ Name = "Microsoft.Graph";                              Description = "Microsoft Graph API (Azure AD, Intune, Teams)" },
+    @{ Name = "Microsoft.Entra";                              Description = "Microsoft Entra Management" },
+    @{ Name = "EntraExporter";                                Description = "Microsoft Entra Exporter" },
+    @{ Name = "ExchangeOnlineManagement";                     Description = "Exchange Online Management" },
+    @{ Name = "Microsoft.Online.SharePoint.PowerShell";       Description = "SharePoint Online & OneDrive Management" },
+    @{ Name = "MicrosoftTeams";                               Description = "Microsoft Teams Management" },
+    @{ Name = "WindowsAutoPilotIntune";                       Description = "Windows Autopilot (Device Management)" },
+    @{ Name = "Microsoft.PowerApps.Administration.PowerShell"; Description = "PowerApps Administration" },
+    @{ Name = "Microsoft.PowerApps.PowerShell";              Description = "PowerApps Module" }
 )
 
 # ----- Display the Menu -----
