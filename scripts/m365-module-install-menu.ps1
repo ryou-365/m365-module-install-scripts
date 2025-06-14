@@ -118,8 +118,9 @@ else {
     # Process as a comma-separated list of numbers
     $selections = $inputChoice -split ",\s*"
     foreach ($sel in $selections) {
-        if ([int]::TryParse($sel, [ref]$null)) {
-            $index = [int]$sel - 1
+        $parsedIndex = 0
+        if ([int]::TryParse($sel, [ref]$parsedIndex)) {
+            $index = $parsedIndex - 1
             if ($index -ge 0 -and $index -lt $modules.Count) {
                 $modName = $modules[$index].Name
                 Install-ModuleWithUpdateCheck -moduleName $modName
