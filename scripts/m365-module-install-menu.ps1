@@ -26,7 +26,7 @@ function Install-ModuleWithUpdateCheck {
     if (-not (Get-PackageProvider -Name NuGet -ErrorAction SilentlyContinue)) {
         Write-Host "Installing NuGet provider..." -ForegroundColor Yellow
         Try {
-            Install-PackageProvider -Name NuGet -Force -Confirm:$false -ErrorAction Stop
+            Install-PackageProvider -Name NuGet -Scope CurrentUser -Force -Confirm:$false -ErrorAction Stop
             Write-Log "Successfully installed the NuGet provider."
         }
         Catch {
@@ -53,7 +53,7 @@ function Install-ModuleWithUpdateCheck {
         if ($installedModule.Version -lt $latestVersion) {
             Write-Host "A newer version ($latestVersion) of [$moduleName] is available. Updating..." -ForegroundColor Yellow
             Try {
-                Update-Module -Name $moduleName -Force -ErrorAction Stop
+                Update-Module -Name $moduleName -Scope CurrentUser -Force -ErrorAction Stop
                 Write-Host "Update of [$moduleName] completed successfully." -ForegroundColor Green
             }
             Catch {
@@ -118,8 +118,9 @@ else {
     # Process as a comma-separated list of numbers
     $selections = $inputChoice -split ",\s*"
     foreach ($sel in $selections) {
-        if ([int]::TryParse($sel, [ref]$null)) {
-            $index = [int]$sel - 1
+        $parsedIndex = 0
+        if ([int]::TryParse($sel, [ref]$parsedIndex)) {
+            $index = $parsedIndex - 1
             if ($index -ge 0 -and $index -lt $modules.Count) {
                 $modName = $modules[$index].Name
                 Install-ModuleWithUpdateCheck -moduleName $modName
