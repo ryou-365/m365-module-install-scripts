@@ -1,40 +1,47 @@
 # m365-module-install-scripts
 
-The PowerShell script automates the installation, update checking, error handling, and version display of Microsoft 365 management modules such as Microsoft Graph, Exchange Online, SharePoint Online, and Teams.
+Microsoft 365 管理モジュールのインストールと更新を自動化する PowerShell スクリプト集です。管理者がすぐに運用を始められるよう、初期セットアップを簡単にすることを目的としています。
 
-## Overview
+## 概要
 
-This repository provides a set of PowerShell scripts designed to simplify the management of Microsoft 365 by automating the installation and updating process of various management modules. The scripts offer the following features:
+このリポジトリには、Microsoft 365 管理用モジュールのインストールや更新を自動化する PowerShell スクリプトが含まれています。主な機能は次のとおりです。
 
-- **Automated Installation:** Installs required Microsoft 365 management modules.
-- **Update Checking:** Verifies if a newer version of a module is available and performs an update if necessary.
-- **Error Handling:** Implements try/catch blocks to manage errors gracefully.
-- **Version Display:** Shows the currently installed version of each module.
+- **インストールの自動化**: 必要な Microsoft 365 管理モジュールを自動でインストールします。
+- **更新チェック**: 新しいバージョンがある場合は自動的に更新を実行します。
+- **エラーハンドリング**: try/catch を用いた安定したエラー処理を行います。
+- **バージョン表示**: 各モジュールのインストール済みバージョンを表示します。
 
-## Supported Modules
+## 対応モジュール
 
-The following modules are supported by the scripts:
+次のモジュールをインストールおよび更新できます。
 
-- **Microsoft Graph:** Provides management capabilities for Azure AD, Intune, Teams, and more.
-- **Microsoft Entra:** Offers overall management for Microsoft Entra, impacting the entire Microsoft 365 environment.
-- **EntraExporter:** Enables data export for Microsoft Entra.
-- **Exchange Online Management:** Handles administration tasks for Exchange Online.
-- **SharePoint Online & OneDrive Management:** Utilizes the Microsoft.Online.SharePoint.PowerShell module for managing SharePoint Online and OneDrive.
-- **Microsoft Teams Management:** Provides tools for managing Microsoft Teams.
-- **Windows Autopilot/Intune (Device Management):** Supports device provisioning and management via WindowsAutoPilotIntune.
-- **Power Platform Modules:** Includes both Microsoft.PowerApps.Administration.PowerShell and Microsoft.PowerApps.PowerShell for managing PowerApps within the Power Platform.
+- **Microsoft Graph**: Azure AD、Intune、Teams などを管理するためのモジュール
+- **Microsoft Entra**: Microsoft Entra 全体の管理を提供
+- **EntraExporter**: Microsoft Entra のデータエクスポート
+- **Exchange Online Management**: Exchange Online の管理用モジュール
+- **SharePoint Online & OneDrive Management**: Microsoft.Online.SharePoint.PowerShell を利用した管理
+- **Microsoft Teams Management**: Microsoft Teams 管理用ツール
+- **Windows Autopilot/Intune (Device Management)**: WindowsAutoPilotIntune を通じたデバイス管理
+- **Power Platform Modules**: Microsoft.PowerApps.Administration.PowerShell と Microsoft.PowerApps.PowerShell
 
-## Usage
+## 使い方
+### クイックスタート
+1. 本リポジトリをクローンまたはダウンロードします。
+2. PowerShell 5.x 以降を起動します。
+3. `scripts` ディレクトリに移動します。
+4. `./m365-module-install-menu.ps1` を実行します。
+5. インストールしたいモジュール番号を入力します。すべて導入する場合は `A` を指定します。
 
-### Running a Single Script
-To run an individual installation script, open PowerShell (ensure you're using PowerShell 5.x) and execute the desired script. For example:
+
+### 個別スクリプトの実行
+特定のモジュールだけをインストールしたい場合は、PowerShell (5.x 以降) を開き、対象のスクリプトを実行します。例:
 
 ```powershell
 .\scripts\m365-module-install-menu.ps1
 ```
 
-### Interactive Menu
-Alternatively, an interactive menu is provided. When executed, the script will display a list of available modules. You can select one or more modules by entering the corresponding numbers (or "A" for all). This mode automates the installation, update, and version-check process.
+### インタラクティブメニュー
+スクリプトを実行するとメニューが表示され、インストールしたいモジュール番号 (または全選択の `A`) を入力できます。インストール・更新・バージョン確認が自動で行われます。
 
 ```powershell
 PS C:\Users\ryou-365>.\scripts\m365-module-install-menu.ps1
@@ -80,8 +87,21 @@ Module installation process completed.
 PS C:\Users\ryou-365>
 ```
 
-## Contribution
-Contributions and improvements to the scripts are welcome! If you find an issue or have a suggestion, please open an issue or submit a pull request.
+## リポジトリ構造
+- `README.md` と `LICENSE` がリポジトリのルートにあります。
+- 主要な PowerShell スクリプトは `scripts/m365-module-install-menu.ps1` です。
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## 重要事項
+- スクリプトは PowerShell 5.x 以降での実行を想定しています。
+- 実行ポリシーによりスクリプトがブロックされる場合は `Set-ExecutionPolicy` コマンドで許可してください。
+- 初回実行時に NuGet プロバイダーを自動インストールします。
+
+## 次に学ぶべきこと
+- `$modules` 配列に独自モジュールを追加する方法
+- Microsoft 365 管理作業を自動化するための PowerShell の基本操作
+
+## 貢献
+バグ報告や機能追加の提案は歓迎します。Issue または Pull Request を利用してください。
+
+## ライセンス
+本プロジェクトは MIT License の下で公開されています。詳細は LICENSE ファイルを参照してください。
