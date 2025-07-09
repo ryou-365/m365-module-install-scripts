@@ -25,15 +25,17 @@ Microsoft 365 管理モジュールのインストールと更新を自動化す
 - **Power Platform Modules**: Microsoft.PowerApps.Administration.PowerShell と Microsoft.PowerApps.PowerShell
 
 ## 使い方
+
 ### クイックスタート
+
 1. 本リポジトリをクローンまたはダウンロードします。
 2. PowerShell 5.x 以降を起動します。
 3. `scripts` ディレクトリに移動します。
 4. `./m365-module-install-menu.ps1` を実行します。
 5. インストールしたいモジュール番号を入力します。すべて導入する場合は `A` を指定します。
 
-
 ### 個別スクリプトの実行
+
 特定のモジュールだけをインストールしたい場合は、PowerShell (5.x 以降) を開き、対象のスクリプトを実行します。例:
 
 ```powershell
@@ -41,6 +43,7 @@ Microsoft 365 管理モジュールのインストールと更新を自動化す
 ```
 
 ### インタラクティブメニュー
+
 スクリプトを実行するとメニューが表示され、インストールしたいモジュール番号 (または全選択の `A`) を入力できます。インストール・更新・バージョン確認が自動で行われます。
 
 ```powershell
@@ -88,20 +91,25 @@ PS C:\Users\ryou-365>
 ```
 
 ## リポジトリ構造
+
 - `README.md` と `LICENSE` がリポジトリのルートにあります。
 - 主要な PowerShell スクリプトは `scripts/m365-module-install-menu.ps1` です。
 
 ## 重要事項
+
 - スクリプトは PowerShell 5.x 以降での実行を想定しています。
 - 実行ポリシーによりスクリプトがブロックされる場合は `Set-ExecutionPolicy` コマンドで許可してください。
 - 初回実行時に NuGet プロバイダーを自動インストールします。
 
 ## 次に学ぶべきこと
+
 - `$modules` 配列に独自モジュールを追加する方法
 - Microsoft 365 管理作業を自動化するための PowerShell の基本操作
 
 ## 貢献
+
 バグ報告や機能追加の提案は歓迎します。Issue または Pull Request を利用してください。
 
 ## ライセンス
+
 本プロジェクトは MIT License の下で公開されています。詳細は LICENSE ファイルを参照してください。
