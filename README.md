@@ -20,6 +20,7 @@ Microsoft 365 管理モジュールのインストールと更新を自動化す
 - **EntraExporter**: Microsoft Entra のデータエクスポート
 - **Exchange Online Management**: Exchange Online の管理用モジュール
 - **SharePoint Online & OneDrive Management**: Microsoft.Online.SharePoint.PowerShell を利用した管理
+- **PnP PowerShell**: SharePoint、Teams、および Microsoft 365 の高度な操作を可能にする PnP（Patterns and Practices）モジュール
 - **Microsoft Teams Management**: Microsoft Teams 管理用ツール
 - **Windows Autopilot/Intune (Device Management)**: WindowsAutoPilotIntune を通じたデバイス管理
 - **Power Platform Modules**: Microsoft.PowerApps.Administration.PowerShell と Microsoft.PowerApps.PowerShell
