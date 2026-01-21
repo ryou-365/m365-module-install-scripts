@@ -90,6 +90,7 @@ $modules = @(
     @{ Name = "EntraExporter";                                Description = "Microsoft Entra Exporter" },
     @{ Name = "ExchangeOnlineManagement";                     Description = "Exchange Online Management" },
     @{ Name = "Microsoft.Online.SharePoint.PowerShell";       Description = "SharePoint Online & OneDrive Management" },
+    @{ Name = "PnP.PowerShell";                               Description = "PnP PowerShell (SharePoint, Teams, and M365)" },
     @{ Name = "MicrosoftTeams";                               Description = "Microsoft Teams Management" },
     @{ Name = "WindowsAutoPilotIntune";                       Description = "Windows Autopilot/Intune (Device Management)" },
     @{ Name = "Microsoft.PowerApps.Administration.PowerShell"; Description = "PowerApps Administration" },
